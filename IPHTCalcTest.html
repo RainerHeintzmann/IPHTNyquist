@@ -2,11 +2,16 @@
 <head>
         <title> IPHT Calculator</title>
     </head>
-    <body style="min-width: 95%;">
+    <body>
+        <style>
+        input {
+            font-size: 4vw;
+        }
         </style>
         <img width="224" height="162" src="https://www.leibniz-ipht.de//wp-content/themes/leibniz_web/img/Logo.svg" alt="Logo" decoding="async" loading="lazy" style="background-color: black; min-width: 95%; border: 10px solid #000; height: auto;">
-        <p>Dept. Microscopy, Nyquist calculator</p>
-        <table>
+        <p style="font-size: 4vw;">Dept. Microscopy, Nyquist calculator</p>
+        <div>
+        <table style="font-size: 4vw;">
         <tbody>
             <tr>
                 <td>NA:</td><td><input id="NA" type="text" value="1.4" onchange="NA_changed()"></td>
@@ -44,6 +49,7 @@
             </tr>
         </tbody>
         </table>
+        </div>
         <script>
             set_float(NA, 1.4);
             set_float(n, 1.518);
