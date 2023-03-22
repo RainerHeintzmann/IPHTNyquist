@@ -5,23 +5,23 @@
     <body>
         <style>
         input {
-            font-size: 3.5vh;
+            font-size: 3.5vw;
             text-align: right;
         }
         table {
-            font-size: 3.5vh;
+            font-size: 3.5vw;
         }
         select {
-            font-size: 3.5vh;
+            font-size: 3.5vw;
         }
         </style>
         <img width="224" height="162" src="https://www.leibniz-ipht.de//wp-content/themes/leibniz_web/img/Logo.svg" alt="Logo" decoding="async" loading="lazy" style="background-color: black; min-width: 95%; border: 10px solid #000; height: auto;">
-        <p style="font-size: 3.5vh;">Nyquist samling calculator, Department of Microscopy</p>
+        <p style="font-size: 3.5vw;">Nyquist samling calculator, Department of Microscopy</p>
         <div>
         <table>
         <tbody>
             <tr>
-                <th  style="width:40%"> Property</th> <th  style="width:20%"> Select</th><th  style="width:20%"> Input/Output</th><th  style="width:10%"> Unit</th>
+                <th  style="width:40%"> Property</th> <th  style="width:20%"> Select</th><th  style="width:20%"> In-/Output</th><th  style="width:10%"> Unit</th>
             </tr>
             <tr>
                 <td>NA:</td><td>
@@ -76,14 +76,14 @@
             <tr>
                 <td style="padding-top: 10px">Magnification:</td><td style="padding-top: 10px">
                     <select name="Mag:" id="mag_sel" onchange="mag_sel_changed()">
-                        <option style="background:gray; color:black" value="150">150</option>
-                        <option style="background:white; color:black"value="100">100</option>
-                        <option style="background:blue; color:white" value="63">63</option>
-                        <option style="background:blue; color:white" value="60">60</option>
-                        <option style="background:lightblue; color:black" value="40">40</option>
-                        <option style="background:gray; color:black" value="25">25</option>
-                        <option style="background:green; color:black" value="20">20</option>
-                        <option style="background:yellow; color:black"  value="10">10</option>
+                        <option style="background-color:gray; background:gray; color:black" value="150">150</option>
+                        <option style="background-color:white; background:white; color:black"value="100">100</option>
+                        <option style="background-color:blue; background:blue; color:white" value="63">63</option>
+                        <option style="background-color:blue; background:blue; color:white" value="60">60</option>
+                        <option style="background-color:lightblue; background:lightblue; color:black" value="40">40</option>
+                        <option style="background-color:gray; background:gray; color:black" value="25">25</option>
+                        <option style="background-color:green; background:green; color:black" value="20">20</option>
+                        <option style="background-color:yellow; background:yellow; color:black"  value="10">10</option>
                       </select></td><td>
                     <input size="6" id="mag" type="text" value="?" onchange="mag_changed()"></td><td>&#10005;</td>
             </tr>
