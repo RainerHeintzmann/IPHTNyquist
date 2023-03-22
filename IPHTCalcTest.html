@@ -5,17 +5,24 @@
     <body>
         <style>
         input {
-            font-size: 3vw;
+            font-size: 8vh;
+            text-align: right;
+        }
+        table {
+            font-size: 8vh;
         }
         select {
-            font-size: 3vw;
+            font-size: 8vh;
         }
         </style>
         <img width="224" height="162" src="https://www.leibniz-ipht.de//wp-content/themes/leibniz_web/img/Logo.svg" alt="Logo" decoding="async" loading="lazy" style="background-color: black; min-width: 95%; border: 10px solid #000; height: auto;">
-        <p style="font-size: 4vw;">Nyquist calculator, Department of Microscopy</p>
+        <p style="font-size: 8vh;">Nyquist samling calculator, Department of Microscopy</p>
         <div>
-        <table style="font-size: 4vw;">
+        <table>
         <tbody>
+            <tr>
+                <th  style="width:40%"> Property</th> <th  style="width:20%"> Select</th><th  style="width:20%"> Input/Output</th><th  style="width:10%"> Unit</th>
+            </tr>
             <tr>
                 <td>NA:</td><td>
                     <select name="NA:" id="na_sel" onchange="na_sel_changed()">
@@ -33,7 +40,7 @@
                         <option value="0.2">0.2</option>
                         <option value="0.1">0.1</option>
                       </select></td><td>
-                    <input id="NA" type="text" value="1.4" onchange="NA_changed()"></td>
+                    <input size="6" id="NA" type="text" value="1.4" onchange="NA_changed()"></td>
             </tr>
             <tr>
                 <td>n:</td><td>
@@ -45,25 +52,25 @@
                         <option value="1.33">water</option>
                         <option value="1.0">air</option>
                       </select></td><td>
-                    <input id="n" type="text" value="1.518" onchange="n_changed()"></td>
+                    <input size="6" id="n" type="text" value="1.518" onchange="n_changed()"></td>
             </tr>
             <tr>
-                <td>&lambda;<sub>ex</sub>:</td><td></td><td><input id="lambda_ex" type="text" value="0.488" onchange="lambda_ex_changed()"></td><td>&mu;m</td>
+                <td>&lambda;<sub>ex</sub>:</td><td></td><td><input size="6" id="lambda_ex" type="text" value="0.488" onchange="lambda_ex_changed()"></td><td>&mu;m</td>
             </tr>
             <tr> 
-                <td>&lambda;<sub>em</sub>:</td><td></td><td><input id="lambda_em" type="text" value="0.488" onchange="lambda_em_changed()"></td><td>&mu;m</td>
+                <td>&lambda;<sub>em</sub>:</td><td></td><td><input size="6" id="lambda_em" type="text" value="0.488" onchange="lambda_em_changed()"></td><td>&mu;m</td>
             </tr>
             <tr>
-                <td style="padding-top: 10px">WF XY samp.:</td><td></td><td style="padding-top: 10px"><input id="sampling_WF_XY" type="text" readonly="readonly" value="?" onchange="sampling_WF_XY_changed()"></td><td>&mu;m</td>
+                <td style="padding-top: 10px">W.F. XY Sampl.:</td><td></td><td style="padding-top: 10px"><input size="6" id="sampling_WF_XY" type="text" readonly="readonly" value="?" onchange="sampling_WF_XY_changed()"></td><td>&mu;m</td>
             </tr>
             <tr> 
-                <td>WF Z samp.:</td><td></td><td><input id="sampling_WF_Z" type="text" value="?" readonly="readonly" onchange="sampling_WF_Z_changed()"></td><td>&mu;m</td>
+                <td>W.F. Z Sampl.:</td><td></td><td><input size="6" id="sampling_WF_Z" type="text" value="?" readonly="readonly" onchange="sampling_WF_Z_changed()"></td><td>&mu;m</td>
             </tr>
             <tr> 
-                <td style="padding-top: 10px">Conf. XY samp.:</td><td></td><td style="padding-top: 10px"><input id="sampling_Conf_XY" readonly="readonly" type="text" value="?" onchange="sampling_C_XY_changed()"></td><td>&mu;m</td>
+                <td style="padding-top: 10px">Conf. XY samp.:</td><td></td><td style="padding-top: 10px"><input size="6" id="sampling_Conf_XY" readonly="readonly" type="text" value="?" onchange="sampling_C_XY_changed()"></td><td>&mu;m</td>
             </tr>
             <tr> 
-                <td>Conf. Z samp.:</td><td></td><td><input id="sampling_Conf_Z" type="text" value="?" readonly="readonly" onchange="sampling_C_Z_changed()"></td><td>&mu;m</td>
+                <td>Conf. Z Sampl.:</td><td></td><td><input size="6" id="sampling_Conf_Z" type="text" value="?" readonly="readonly" onchange="sampling_C_Z_changed()"></td><td>&mu;m</td>
             </tr>
 
             <tr>
@@ -78,20 +85,20 @@
                         <option style="background:green; color:black" value="20">20</option>
                         <option style="background:yellow; color:black"  value="10">10</option>
                       </select></td><td>
-                    <input id="mag" type="text" value="?" onchange="mag_changed()"></td><td>&#10005;</td>
+                    <input size="6" id="mag" type="text" value="?" onchange="mag_changed()"></td><td>&#10005;</td>
             </tr>
             <tr>
-                <td>Postmagn.:</td><td>
+                <td>Post-Magnif.:</td><td>
                     <select name="Mag:" id="postmag_sel" onchange="postmag_sel_changed()">
                         <option value="1.0">1.0</option>
                         <option value="1.5">1.5</option>
                         <option value="2.0">2.0</option>
                         <option value="2.5">2.5</option>
                       </select></td><td>
-                    <input id="postmag" type="text" value="?" onchange="postmag_changed()"></td><td>&#10005;</td>
+                    <input size="6" id="postmag" type="text" value="?" onchange="postmag_changed()"></td><td>&#10005;</td>
             </tr>
             <tr>
-                <td>Cam XY samp.:</td><td></td><td><input id="sampling_cam_XY" type="text" value="?"  readonly="readonly" onchange="sampling_Cam_XY_changed()"></td><td>&mu;m</td>
+                <td>Cam. XY Sampl.:</td><td></td><td><input size="6" id="sampling_cam_XY" type="text" value="?"  readonly="readonly" onchange="sampling_Cam_XY_changed()"></td><td>&mu;m</td>
             </tr>
         </tbody>
         </table>
