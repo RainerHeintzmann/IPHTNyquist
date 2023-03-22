@@ -54,34 +54,34 @@
                 <td>&lambda;<sub>em</sub>:</td><td></td><td><input id="lambda_em" type="text" value="0.488" onchange="lambda_em_changed()"></td><td>&mu;m</td>
             </tr>
             <tr>
-                <td style="padding-top: 10px">WF XY samp.:</td><td></td><td style="padding-top: 10px"><input id="sampling_WF_XY" type="text" value="?" onchange="sampling_WF_XY_changed()"></td><td>&mu;m</td>
+                <td style="padding-top: 10px">WF XY samp.:</td><td></td><td style="padding-top: 10px"><input id="sampling_WF_XY" type="text" readonly="readonly" value="?" onchange="sampling_WF_XY_changed()"></td><td>&mu;m</td>
             </tr>
             <tr> 
-                <td>WF Z samp.:</td><td></td><td><input id="sampling_WF_Z" type="text" value="?" onchange="sampling_WF_Z_changed()"></td><td>&mu;m</td>
+                <td>WF Z samp.:</td><td></td><td><input id="sampling_WF_Z" type="text" value="?" readonly="readonly" onchange="sampling_WF_Z_changed()"></td><td>&mu;m</td>
             </tr>
             <tr> 
-                <td style="padding-top: 10px">Conf. XY samp.:</td><td></td><td style="padding-top: 10px"><input id="sampling_Conf_XY" type="text" value="?" onchange="sampling_C_XY_changed()"></td><td>&mu;m</td>
+                <td style="padding-top: 10px">Conf. XY samp.:</td><td></td><td style="padding-top: 10px"><input id="sampling_Conf_XY" readonly="readonly" type="text" value="?" onchange="sampling_C_XY_changed()"></td><td>&mu;m</td>
             </tr>
             <tr> 
-                <td>Conf. Z samp.:</td><td></td><td><input id="sampling_Conf_Z" type="text" value="?" onchange="sampling_C_Z_changed()"></td><td>&mu;m</td>
+                <td>Conf. Z samp.:</td><td></td><td><input id="sampling_Conf_Z" type="text" value="?" readonly="readonly" onchange="sampling_C_Z_changed()"></td><td>&mu;m</td>
             </tr>
 
             <tr>
-                <td style="padding-top: 10px">Magn.:</td><td style="padding-top: 10px">
+                <td style="padding-top: 10px">Magnification:</td><td style="padding-top: 10px">
                     <select name="Mag:" id="mag_sel" onchange="mag_sel_changed()">
-                        <option value="150">150</option>
-                        <option value="100">100</option>
-                        <option value="63">63</option>
-                        <option value="60">60</option>
-                        <option value="40">40</option>
-                        <option value="25">25</option>
-                        <option value="20">20</option>
-                        <option value="10">10</option>
+                        <option style="background:gray; color:black" value="150">150</option>
+                        <option style="background:white; color:black"value="100">100</option>
+                        <option style="background:blue; color:white" value="63">63</option>
+                        <option style="background:blue; color:white" value="60">60</option>
+                        <option style="background:lightblue; color:black" value="40">40</option>
+                        <option style="background:gray; color:black" value="25">25</option>
+                        <option style="background:green; color:black" value="20">20</option>
+                        <option style="background:yellow; color:black"  value="10">10</option>
                       </select></td><td>
                     <input id="mag" type="text" value="?" onchange="mag_changed()"></td><td>&#10005;</td>
             </tr>
             <tr>
-                <td>Postmag:</td><td>
+                <td>Postmagn.:</td><td>
                     <select name="Mag:" id="postmag_sel" onchange="postmag_sel_changed()">
                         <option value="1.0">1.0</option>
                         <option value="1.5">1.5</option>
@@ -91,24 +91,12 @@
                     <input id="postmag" type="text" value="?" onchange="postmag_changed()"></td><td>&#10005;</td>
             </tr>
             <tr>
-                <td>Cam XY samp.:</td><td></td><td><input id="sampling_cam_XY" type="text" value="?" onchange="sampling_Cam_XY_changed()"></td><td>&mu;m</td>
+                <td>Cam XY samp.:</td><td></td><td><input id="sampling_cam_XY" type="text" value="?"  readonly="readonly" onchange="sampling_Cam_XY_changed()"></td><td>&mu;m</td>
             </tr>
         </tbody>
         </table>
         </div>
         <script>
-            na_sel.value = "1.4"
-            set_float(NA, 1.4);
-            mat.value = "1.518"
-            set_float(n, 1.518);
-            set_float(lambda_ex, 0.488);
-            set_float(lambda_em, 0.520);
-            mag_sel.value = "60"
-            set_float(mag, 60);
-            postmag_sel.value = "1.0"
-            set_float(postmag, 1.0);
-            update_sampling();
-
             function set_float(atag, val) {
                 atag.fval = val
                 atag.value = val.toFixed(3)
@@ -195,6 +183,8 @@
             mag_sel_changed = function()
             {
                 console.log("mag_sel_changed")
+                mag_sel.style.backgroundColor = mag_sel.options[mag_sel.selectedIndex].style.backgroundColor
+                mag_sel.style.color = mag_sel.options[mag_sel.selectedIndex].style.color
                 mag.value = mag_sel.value
                 res = get_float(mag)
                 update_sampling();
@@ -257,6 +247,18 @@
             sampling_WF_Z.sampling_Cam_XY_changed = function()
             {
             }            
+            na_sel.value = "1.4"
+            set_float(NA, 1.4);
+            mat.value = "1.518"
+            set_float(n, 1.518);
+            set_float(lambda_ex, 0.488);
+            set_float(lambda_em, 0.520);
+            mag_sel.value = "60"
+            mag_sel_changed()
+            set_float(mag, 60);
+            postmag_sel.value = "1.0"
+            set_float(postmag, 1.0);
+            update_sampling();
     </script>
     </body>
 </html>
