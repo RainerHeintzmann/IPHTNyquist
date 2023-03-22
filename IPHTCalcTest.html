@@ -31,7 +31,7 @@
                         <option value="0.4">0.4</option>
                         <option value="0.2">0.2</option>
                         <option value="0.1">0.1</option>
-                      </select>
+                      </select></td><td>
                     <input id="NA" type="text" value="1.4" onchange="NA_changed()"></td>
             </tr>
             <tr>
@@ -39,29 +39,29 @@
                     <select name="Material:" id="mat" onchange="mat_changed()">
                         <option value="1.65">HR oil</option>
                         <option value="1.518">oil</option>
-                        <option value="1.46">silicon oil</option>
+                        <option value="1.46">sil. oil</option>
                         <option value="1.33">water</option>
                         <option value="1.0">air</option>
-                      </select>
+                      </select></td><td>
                     <input id="n" type="text" value="1.518" onchange="n_changed()"></td>
             </tr>
             <tr>
-                <td>&lambda;<sub>ex</sub>:</td><td><input id="lambda_ex" type="text" value="0.488" onchange="lambda_ex_changed()"></td><td>&mu;m</td>
+                <td>&lambda;<sub>ex</sub>:</td><td></td><td><input id="lambda_ex" type="text" value="0.488" onchange="lambda_ex_changed()"></td><td>&mu;m</td>
+            </tr>
+            <tr> 
+                <td>&lambda;<sub>em</sub>:</td><td></td><td><input id="lambda_em" type="text" value="0.488" onchange="lambda_em_changed()"></td><td>&mu;m</td>
             </tr>
             <tr>
-                <td>&lambda;<sub>em</sub>:</td><td><input id="lambda_em" type="text" value="0.488" onchange="lambda_em_changed()"></td><td>&mu;m</td>
+                <td style="padding-top: 10px">WF XY samp.:</td><td></td><td style="padding-top: 10px"><input id="sampling_WF_XY" type="text" value="?" onchange="sampling_WF_XY_changed()"></td><td>&mu;m</td>
             </tr>
-            <tr>
-                <td style="padding-top: 10px">WF XY samp.:</td><td style="padding-top: 10px"><input id="sampling_WF_XY" type="text" value="?" onchange="sampling_WF_XY_changed()"></td><td>&mu;m</td>
+            <tr> 
+                <td>WF Z samp.:</td><td></td><td><input id="sampling_WF_Z" type="text" value="?" onchange="sampling_WF_Z_changed()"></td><td>&mu;m</td>
             </tr>
-            <tr>
-                <td>WF Z samp.:</td><td><input id="sampling_WF_Z" type="text" value="?" onchange="sampling_WF_Z_changed()"></td><td>&mu;m</td>
+            <tr> 
+                <td style="padding-top: 10px">Conf. XY samp.:</td><td></td><td style="padding-top: 10px"><input id="sampling_Conf_XY" type="text" value="?" onchange="sampling_C_XY_changed()"></td><td>&mu;m</td>
             </tr>
-            <tr>
-                <td style="padding-top: 10px">Conf. XY samp.:</td><td style="padding-top: 10px"><input id="sampling_Conf_XY" type="text" value="?" onchange="sampling_C_XY_changed()"></td><td>&mu;m</td>
-            </tr>
-            <tr>
-                <td>Conf. Z samp.:</td><td><input id="sampling_Conf_Z" type="text" value="?" onchange="sampling_C_Z_changed()"></td><td>&mu;m</td>
+            <tr> 
+                <td>Conf. Z samp.:</td><td></td><td><input id="sampling_Conf_Z" type="text" value="?" onchange="sampling_C_Z_changed()"></td><td>&mu;m</td>
             </tr>
 
             <tr>
@@ -75,7 +75,7 @@
                         <option value="25">25</option>
                         <option value="20">20</option>
                         <option value="10">10</option>
-                      </select>
+                      </select></td><td>
                     <input id="mag" type="text" value="?" onchange="mag_changed()"></td><td>&#10005;</td>
             </tr>
             <tr>
@@ -85,11 +85,11 @@
                         <option value="1.5">1.5</option>
                         <option value="2.0">2.0</option>
                         <option value="2.5">2.5</option>
-                      </select>
+                      </select></td><td>
                     <input id="postmag" type="text" value="?" onchange="postmag_changed()"></td><td>&#10005;</td>
             </tr>
             <tr>
-                <td>Cam XY samp.:</td><td><input id="sampling_cam_XY" type="text" value="?" onchange="sampling_Cam_XY_changed()"></td><td>&mu;m</td>
+                <td>Cam XY samp.:</td><td></td><td><input id="sampling_cam_XY" type="text" value="?" onchange="sampling_Cam_XY_changed()"></td><td>&mu;m</td>
             </tr>
         </tbody>
         </table>
