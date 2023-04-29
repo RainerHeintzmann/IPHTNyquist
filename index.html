@@ -29,7 +29,8 @@
                 <th  style="width:40%"> Property</th> <th  style="width:20%"> Select</th><th  style="width:20%"> In-/Output</th><th  style="width:10%"> Unit</th>
             </tr>
             <tr>
-                <td>NA:</td><td>
+                <td>NA:</td>
+                <td>
                     <select name="NA:" id="na_sel" onchange="na_sel_changed()">
                         <option value="1.65">1.65</option>
                         <option value="1.46">1.46</option>
@@ -103,7 +104,14 @@
                     <input size="6" id="postmag" type="text" value="?" onchange="postmag_changed()"></td><td>&#10005;</td>
             </tr>
             <tr>
-                <td>Cam. XY Sampl.:</td><td></td><td><input size="6" id="sampling_cam_XY" type="text" value="?"  readonly="readonly" onchange="sampling_Cam_XY_changed()"></td><td>&mu;m</td>
+                <td>Cam. XY Sampl.:</td>
+                <td>
+                    <select name="Camera:" id="cam_sel" onchange="cam_sel_changed()">
+                        <option value="Hamamatsu Flash 4">6.5</option>
+                        <option value="Prime BSI">6.5</option>
+                        <option value="Andor Neo">12.0</option>
+                      </select></td>
+                <td><input size="6" id="sampling_cam_XY" type="text" value="?"  readonly="readonly" onchange="sampling_Cam_XY_changed()"></td><td>&mu;m</td>
             </tr>
         </tbody>
         </table>
@@ -213,6 +221,13 @@
                 console.log("postmag_sel_changed")
                 postmag.value = postmag_sel.value
                 res = get_float(postmag)
+                update_sampling();
+            }
+            cam_sel_changed = function()
+            {
+                console.log("cam_sel_changed")
+                Camera.value = cam_sel.value
+                res =  get_float(Camera, 0.0, n.fval)
                 update_sampling();
             }
 
