@@ -106,7 +106,7 @@
             <tr>
                 <td>Cam. XY Sampl.:</td>
                 <td></td>
-                <td><input size="6" id="sampling_cam_XY" type="text" value="?"  readonly="readonly" onchange="sampling_Cam_XY_changed()"></td><td>&mu;m</td>
+                <td><input size="6" id="sampling_cam_XY" type="text" value="?"  readonly="readonly" onchange="sampling_cam_XY_changed()"></td><td>&mu;m</td>
             </tr>
             <tr>
                 <td style="display: none"></td>
@@ -124,7 +124,7 @@
                         <option value="6.5">pco.Edge</option>
                         <option value="3.63">Flash2.8</option>
                       </select></td>
-                <td><input size="6" id="cam_XY" type="text" value="?"  readonly="readonly" onchange="Cam_XY_changed()"></td><td>&mu;m</td>
+                <td><input size="6" id="cam_XY" type="text" value="?"  readonly="readonly" onchange="cam_XY_changed()"></td><td>&mu;m</td>
             </tr>
         </tbody>
         </table>
@@ -195,9 +195,9 @@
                 sampling_WF_XY.style.backgroundColor = "lightgreen"
                 sampling_WF_Z.style.backgroundColor = "lightgreen"
                 if (get_float(sampling_cam_XY) > get_float(cam_XY)) 
-                    cam_XY.style.backgroundColor = "red"
+                    {cam_XY.style.backgroundColor = "red"}
                 else                 
-                    cam_XY.style.backgroundColor = "lightgreen"                
+                    {cam_XY.style.backgroundColor = "lightgreen"}    
 
                 lambda_eff = 1/(1/lambda_ex.fval + 1/lambda_em.fval)
                 XY_conf = lambda_eff / (4*NA.fval)
@@ -288,14 +288,19 @@
             sampling_WF_Z.sampling_WF_Z_changed = function()
             {
             }            
-            sampling_WF_XY.sampling_C_XY_changed = function()
+            sampling_C_XY_XY.sampling_C_XY_changed = function()
             {
             }
-            sampling_WF_Z.sampling_C_Z_changed = function()
+            sampling_C_Z_Z.sampling_C_Z_changed = function()
             {
             }            
-            sampling_WF_Z.sampling_Cam_XY_changed = function()
+            sampling_cam_XY_Z.sampling_cam_XY_changed = function()
             {
+            }
+            cam_XY.cam_XY_changed = function()
+            {
+                res =  get_float(cam_XY, 0.1, 3.0);
+                update_sampling();
             }            
             na_sel.value = "1.4"
             set_float(NA, 1.4);
@@ -308,6 +313,7 @@
             set_float(mag, 60);
             postmag_sel.value = "1.0"
             set_float(postmag, 1.0);
+            set_float(cam_XY, 6.5);
             update_sampling();
     </script>
     </body>
