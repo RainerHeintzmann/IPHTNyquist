@@ -1,6 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-        <title> IPHT Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> IPHT Calculator</title>
+    <link rel="canonical" href="https://rainerheintzmann.github.io/IPHTNyquist/" />
+    <link rel="manifest" href="/IPHTNyquist/manifest.webmanifest">
     </head>
     <body>
         <style>
@@ -104,6 +109,12 @@
         </table>
         </div>
         <script>
+            if (navigator.serviceWorker) {
+            navigator.serviceWorker.register (
+            '/IPHTNyquist/sw.js',
+            {scope: '/IPHTNyquist/'}
+            )
+            }
             function set_float(atag, val) {
                 atag.fval = val
                 atag.value = val.toFixed(3)
