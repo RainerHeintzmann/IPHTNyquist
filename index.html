@@ -193,10 +193,12 @@
                 set_float(sampling_cam_XY, mag.fval * postmag.fval * XY_samp)
                 sampling_WF_XY.style.backgroundColor = "lightgreen"
                 sampling_WF_Z.style.backgroundColor = "lightgreen"
-                if (get_float(sampling_cam_XY) > get_float(cam_XY)) 
-                    {cam_XY.style.backgroundColor = "red"}
-                else                 
-                    {cam_XY.style.backgroundColor = "lightgreen"}    
+                if (get_float(sampling_cam_XY) < get_float(cam_XY)) 
+                    {cam_XY.style.backgroundColor = "red"
+                    cam_sel.style.backgroundColor = "red"}
+                else
+                    {cam_XY.style.backgroundColor = "lightgreen"
+                    cam_sel.style.backgroundColor = "lightgreen"}    
 
                 lambda_eff = 1/(1/lambda_ex.fval + 1/lambda_em.fval)
                 XY_conf = lambda_eff / (4*NA.fval)
@@ -310,12 +312,12 @@
             set_float(lambda_em, 0.520);
             mag_sel.value = "60"
             set_float(mag, 60);
-            postmag_sel.value = "1.0"
             set_float(postmag, 1.0);
+            set_float(cam_XY, 6.5);
+            postmag_sel.value = "1.0"
+            cam_XY_sel.value = "6.5"
             mag_sel_changed()
             update_sampling();
-            cam_XY_sel.value = "6.5"
-            set_float(cam_XY, 6.5);
     </script>
     </body>
 </html>
