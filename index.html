@@ -123,7 +123,7 @@
                         <option value="6.5">PCO pco.Edge</option>
                         <option value="3.63">Hamamatsu Flash2.8</option>
                       </select></td>
-                <td><input size="6" id="cam_XY" type="text" value="?"  readonly="readonly" onchange="cam_XY_changed()"></td><td>&mu;m</td>
+                <td><input size="6" id="cam_XY" type="text" value="Hamamatsu Flash4.0" onchange="cam_XY_changed()"></td><td>&mu;m</td>
             </tr>
         </tbody>
         </table>
@@ -313,8 +313,9 @@
             set_float(mag, 60);
             postmag_sel.value = "1.0"
             set_float(postmag, 1.0);
-            set_float(cam_XY, 6.5);
             update_sampling();
+            cam_XY_sel.value = "Hamamatsu Flash4.0"
+            set_float(cam_XY, 6.5);
     </script>
     </body>
 </html>
