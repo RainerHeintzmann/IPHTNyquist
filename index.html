@@ -73,7 +73,7 @@
                 <td>W.F. Z Sampl.:</td><td></td><td><input size="6" id="sampling_WF_Z" type="text" value="?" readonly="readonly" onchange="sampling_WF_Z_changed()"></td><td>&mu;m</td>
             </tr>
             <tr> 
-                <td style="padding-top: 10px">Conf. XY samp.:</td><td></td><td style="padding-top: 10px"><input size="6" id="sampling_Conf_XY" readonly="readonly" type="text" value="?" onchange="sampling_C_XY_changed()"></td><td>&mu;m</td>
+                <td style="padding-top: 10px">Conf. XY Sampl.:</td><td></td><td style="padding-top: 10px"><input size="6" id="sampling_Conf_XY" readonly="readonly" type="text" value="?" onchange="sampling_C_XY_changed()"></td><td>&mu;m</td>
             </tr>
             <tr> 
                 <td>Conf. Z Sampl.:</td><td></td><td><input size="6" id="sampling_Conf_Z" type="text" value="?" readonly="readonly" onchange="sampling_C_Z_changed()"></td><td>&mu;m</td>
@@ -105,6 +105,11 @@
             </tr>
             <tr>
                 <td>Cam. XY Sampl.:</td>
+                <td></td>
+                <td><input size="6" id="sampling_cam_XY" type="text" value="?"  readonly="readonly" onchange="sampling_Cam_XY_changed()"></td><td>&mu;m</td>
+            </tr>
+            <tr>
+                <td style="display: none"></td>
                 <td>
                     <select name="Camera:" id="cam_sel" onchange="cam_sel_changed()">
                         <option value="16">Evolve512</option>
@@ -119,7 +124,7 @@
                         <option value="6.5">pco.Edge</option>
                         <option value="3.63">Flash2.8</option>
                       </select></td>
-                <td><input size="6" id="sampling_cam_XY" type="text" value="?"  readonly="readonly" onchange="sampling_Cam_XY_changed()"></td><td>&mu;m</td>
+                <td><input size="6" id="cam_XY" type="text" value="?"  readonly="readonly" onchange="Cam_XY_changed()"></td><td>&mu;m</td>
             </tr>
         </tbody>
         </table>
@@ -189,6 +194,10 @@
                 set_float(sampling_cam_XY, mag.fval * postmag.fval * XY_samp)
                 sampling_WF_XY.style.backgroundColor = "lightgreen"
                 sampling_WF_Z.style.backgroundColor = "lightgreen"
+                if (get_float(sampling_cam_XY) > get_float(cam_XY)) 
+                    cam_XY.style.backgroundColor = "red"
+                else                 
+                    cam_XY.style.backgroundColor = "lightgreen"                
 
                 lambda_eff = 1/(1/lambda_ex.fval + 1/lambda_em.fval)
                 XY_conf = lambda_eff / (4*NA.fval)
@@ -234,8 +243,8 @@
             cam_sel_changed = function()
             {
                 console.log("cam_sel_changed")
-                sampling_cam_XY.value = cam_sel.value
-                res =  get_float(sampling_cam_XY, 0.0, n.fval)
+                cam_XY.value = cam_sel.value
+                res =  get_float(cam_XY, 0.0, n.fval)
                 update_sampling();
             }
 
