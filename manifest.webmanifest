@@ -6,8 +6,8 @@
     "description": "Caculates the Required Sampling for Microscopy",
   
     // Scope and start URL - these need to change to yours
-    "scope": "./IPHTNyquist/",
-    "start_url": "./IPHTNyquist/",
+    "scope": "/IPHTNyquist/",
+    "start_url": "/IPHTNyquist/",
   
     // colours of the app as displayed in the installer
     "background_color": "#ffffff",
@@ -22,7 +22,7 @@
     // you may not be able to install the app. 
     "icons": [
         {
-          "src": "./IPHTNyquist/img/icon.png",
+          "src": "/IPHTNyquist/img/icon.png",
           "type": "image/png",
           "sizes": "512x512"
         }
