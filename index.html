@@ -107,9 +107,9 @@
                 <td>Cam. XY Sampl.:</td>
                 <td>
                     <select name="Camera:" id="cam_sel" onchange="cam_sel_changed()">
-                        <option value="Hamamatsu Flash 4">6.5</option>
-                        <option value="Prime BSI">6.5</option>
-                        <option value="Andor Neo">12.0</option>
+                        <option value="6.5">Hamamatsu Flash 4</option>
+                        <option value="6.5">Photometrics Prime BSI</option>
+                        <option value="12.0">Andor Neo</option>
                       </select></td>
                 <td><input size="6" id="sampling_cam_XY" type="text" value="?"  readonly="readonly" onchange="sampling_Cam_XY_changed()"></td><td>&mu;m</td>
             </tr>
@@ -226,8 +226,8 @@
             cam_sel_changed = function()
             {
                 console.log("cam_sel_changed")
-                Camera.value = cam_sel.value
-                res =  get_float(Camera, 0.0, n.fval)
+                sampling_cam_XY.value = cam_sel.value
+                res =  get_float(sampling_cam_XY, 0.0, n.fval)
                 update_sampling();
             }
 
