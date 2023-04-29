@@ -111,17 +111,17 @@
             <tr>
                 <td colspan="2">
                     <select name="Camera:" id="cam_sel" onchange="cam_sel_changed()">
-                        <option value="16">Evolve512</option>
-                        <option value="16">iXon-887</option>
-                        <option value="16">iXon-897</option>
-                        <option value="13.5">iKon-L936</option>
-                        <option value="13.0">iKon-M934</option>
-                        <option value="13.0">iXon-888</option>
-                        <option value="6.5">Flash4.0</option>
-                        <option value="6.5">PrimeBSI</option>
-                        <option value="6.5">Neo5.5</option>
-                        <option value="6.5">pco.Edge</option>
-                        <option value="3.63">Flash2.8</option>
+                        <option value="16">Photometrics Evolve512</option>
+                        <option value="16">Andor iXon-887</option>
+                        <option value="16">Andor iXon-897</option>
+                        <option value="13.5">Andor iKon-L936</option>
+                        <option value="13.0">Andor iKon-M934</option>
+                        <option value="13.0">Andor iXon-888</option>
+                        <option value="6.5">Hamamatsu Flash4.0</option>
+                        <option value="6.5">Photometrics PrimeBSI</option>
+                        <option value="6.5">Andor Neo5.5</option>
+                        <option value="6.5">PCO pco.Edge</option>
+                        <option value="3.63">Hamamatsu Flash2.8</option>
                       </select></td>
                 <td><input size="6" id="cam_XY" type="text" value="?"  readonly="readonly" onchange="cam_XY_changed()"></td><td>&mu;m</td>
             </tr>
@@ -243,9 +243,10 @@
             {
                 console.log("cam_sel_changed")
                 cam_XY.value = cam_sel.value
-                res =  get_float(cam_XY, 0.0, n.fval)
+                res =  get_float(cam_XY, 0.01, 200.0)
                 update_sampling();
             }
+
 
             NA.NA_changed = function()
             {
@@ -293,7 +294,7 @@
             sampling_Conf_Z.sampling_C_Z_changed = function()
             {
             }            
-            sampling_cam_XY_Z.sampling_cam_XY_changed = function()
+            sampling_cam_XY.sampling_cam_XY_changed = function()
             {
             }
             cam_XY.cam_XY_changed = function()
