@@ -109,8 +109,7 @@
                 <td><input size="6" id="sampling_cam_XY" type="text" value="?"  readonly="readonly" onchange="sampling_cam_XY_changed()"></td><td>&mu;m</td>
             </tr>
             <tr>
-                <td style="display: none"></td>
-                <td>
+                <td colspan="2">
                     <select name="Camera:" id="cam_sel" onchange="cam_sel_changed()">
                         <option value="16">Evolve512</option>
                         <option value="16">iXon-887</option>
@@ -132,8 +131,8 @@
         <script>
             if (navigator.serviceWorker) {
             navigator.serviceWorker.register (
-            '/IPHTNyquist/sw.js',
-            {scope: '/IPHTNyquist/'}
+                '/IPHTNyquist/sw.js',
+                {scope: '/IPHTNyquist/'}
             )
             }
             function set_float(atag, val) {
@@ -158,7 +157,7 @@
                 console.log(val)
                 if (isNaN(val)) {
                     console.log("bad float")
-                    set_float(atag,atag.fval);
+                    set_float(atag, atag.fval);
                     val = atag.fval
                     atag.style.backgroundColor = "red"
                 }
@@ -211,7 +210,7 @@
             {
                 console.log("mat_changed")
                 res =  set_float(n, parseFloat(mat.value))
-                get_float(NA,0.0, n.fval)                
+                get_float(NA, 0.0, n.fval)                
                 update_sampling();
             }
 
@@ -288,7 +287,7 @@
             sampling_WF_Z.sampling_WF_Z_changed = function()
             {
             }            
-            sampling_C_XY_XY.sampling_C_XY_changed = function()
+            sampling_C_XY.sampling_C_XY_changed = function()
             {
             }
             sampling_C_Z_Z.sampling_C_Z_changed = function()
